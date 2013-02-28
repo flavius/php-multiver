@@ -1,0 +1,7 @@
+build-requirements/*/bin/
+build-requirements/*/info/
+build-requirements/*/lib/
+build-requirements/*/man/
+build-requirements/*/share/
+build/
+inst/
