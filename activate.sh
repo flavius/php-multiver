@@ -10,30 +10,32 @@ PHP_MINORVER=`echo ${PHP_MINORVER#*.}`
 PHP_PATCHVER=`echo ${PHP_VERSION##*.}`
 PHP_BRANCH="php-$PHP_MAJORVER.$PHP_MINORVER.$PHP_PATCHVER"
 
-echo "Building prerequisites"
-source "$MULTIVER_ROOT/build-requirements/$PHP_VERSION/build.sh"
+source "$MULTIVER_ROOT/bsfl"
+
+msg_info "Building prerequisites"
+cmd "$MULTIVER_ROOT/build-requirements/$PHP_VERSION/build.sh"
 export PATH="$MULTIVER_ROOT/built-requirements/$PHP_VERSION/bin":$PATH
 
-echo "Preparing PHP"
+msg_info "Preparing PHP"
 pushd "$MULTIVER_ROOT/php-src"
-git checkout $PHP_BRANCH
-./buildconf --copy --force
-./genfiles
+cmd "git checkout $PHP_BRANCH"
+cmd "./buildconf --copy --force"
+cmd "./genfiles"
 popd
 
-echo "Configuring PHP"
-mkdir -p "$MULTIVER_ROOT/build/$PHP_VERSION"
+msg_info "Configuring PHP"
+cmd "mkdir -p $MULTIVER_ROOT/build/$PHP_VERSION"
 pushd "$MULTIVER_ROOT/build/$PHP_VERSION"
-"$MULTIVER_ROOT/php-src/configure" --prefix="$MULTIVER_ROOT/inst/$PHP_VERSION" ${@:2}
-echo "Building PHP"
-make
-echo "Installing PHP"
-make install
+cmd "$MULTIVER_ROOT/php-src/configure --prefix=$MULTIVER_ROOT/inst/$PHP_VERSION ${@:2}"
+msg_info "Building PHP"
+cmd "make"
+msg_info "Installing PHP"
+cmd "make install"
 popd
 
-echo "Cleaning up PHP source"
+msg_info "Cleaning up PHP source"
 pushd "$MULTIVER_ROOT/php-src"
-git clean -fdx
-git reset --hard master
-git checkout master
+cmd "git clean -fdx"
+cmd "git reset --hard master"
+cmd "git checkout master"
 popd
