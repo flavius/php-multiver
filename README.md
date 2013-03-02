@@ -24,5 +24,17 @@ For example:
 
 ## Using a specific version:
 
-    export PATH=~/projects/php-multiver/inst/5.4.12/bin:$PATH
+    source activate_5.4.12.sh
 
+Now using:
+
+    which php
+
+should show you the new binary instead. Simply spawn a new terminal to quickly
+revert to the system's default.
+
+## TODO
+
+* More error handling
+* Installing more build dependencies (currently only bison 2.3)
+* Suggestions?
