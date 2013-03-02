@@ -25,7 +25,7 @@ start=`now`
 msg_info "Configuring PHP"
 cmd "mkdir -p $MULTIVER_ROOT/build/$PHP_VERSION"
 pushd "$MULTIVER_ROOT/build/$PHP_VERSION"
-cmd "$MULTIVER_ROOT/php-src/configure --prefix=$MULTIVER_ROOT/inst/$PHP_VERSION $EXTENDEDPARAMS"
+cmd "$MULTIVER_ROOT/php-src/configure --prefix=$MULTIVER_ROOT/inst/$PHP_VERSION ${EXTENDEDPARAMS[*]}"
 DURATION=$(( $(now) - $start ))
 msg_info "Configuring PHP took $DURATION seconds"
 
