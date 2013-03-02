@@ -9,7 +9,7 @@ PHP_BRANCH="php-$PHP_MAJORVER.$PHP_MINORVER.$PHP_PATCHVER"
 msg_info "Building bison 2.3"
 source "$MULTIVER_ROOT/commands/bison.sh"
 #TODO bison versions
-export PATH="$MULTIVER_ROOT/build-requirements/$BISON_VER/bin":$PATH
+export PATH="$MULTIVER_ROOT/build-requirements/bison-$BISON_VER/bin":$PATH
 
 start=`now`
 msg_info "Preparing PHP"
