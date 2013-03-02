@@ -39,3 +39,7 @@ revert to the system's default.
 * Installing more build dependencies (currently only bison 2.3)
 * Generate gdb "file" script and various other gdb scripts
 * Suggestions?
+
+## Screenshot
+
+![Screenshot](http://i.imm.io/XXKn.png)
