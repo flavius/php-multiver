@@ -18,5 +18,5 @@ MAINCMD="${INTERNALCMD[0]}"
 INTERNALCMD="${INTERNALCMD[@]:1}"
 
 source "$MULTIVER_ROOT/bsfl"
-source "$MULTIVER_ROOT/$MAINCMD.sh"
+source "$MULTIVER_ROOT/commands/$MAINCMD.sh"
 
