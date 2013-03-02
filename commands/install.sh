@@ -53,3 +53,8 @@ popd
 DURATION=$(( $(now) - $start ))
 msg_info "Cleaning the PHP source took $DURATION seconds"
 
+echo "export PATH=$MULTIVER_ROOT/inst/$PHP_VERSION/bin:\$PATH" > "activate_$PHP_VERSION.sh"
+echo "-------------------------------------------------------------------------"
+echo "you can now type the following to activate php $PHP_VERSION:"
+echo "source activate_$PHP_VERSION.sh"
+echo "-------------------------------------------------------------------------"
