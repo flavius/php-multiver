@@ -37,4 +37,5 @@ revert to the system's default.
 
 * More error handling
 * Installing more build dependencies (currently only bison 2.3)
+* Generate gdb "file" script and various other gdb scripts
 * Suggestions?
