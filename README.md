@@ -19,12 +19,12 @@ This may take a while, because it fetches the PHP source too.
 
 For example:
 
-    ./multiver.sh install 5.4.12 --enable-maintainer-zts --enable-debug \
+    ./multiver.sh install 5.4.13 --enable-maintainer-zts --enable-debug \
     --disable-cgi --enable-cli
 
 ## Using a specific version:
 
-    source activate_5.4.12.sh
+    source activate_5.4.13.sh
 
 Now using:
 
